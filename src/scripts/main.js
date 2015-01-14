@@ -16,6 +16,7 @@ function isIsogram(word){
   for(var i = 0, l = letters.length; i < l; i++){
     letter = letters[i];
 
+    // added to check if number
     if(seen.indexOf(letter) !== -1 || !isNaN(letter) ){
       is = false;
       break;

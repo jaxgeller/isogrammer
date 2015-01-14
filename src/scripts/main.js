@@ -6,7 +6,7 @@ function getTemplate(isogram) {
   return template({isogram: isogram});
 }
 
-// http://jsperf.com/isisogram/2
+// thanks --> http://jsperf.com/isisogram/2
 function isIsogram(word){
   var seen = [];
   var letters = word.split('');

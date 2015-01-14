@@ -1,0 +1,27 @@
+.header {
+
+}
+.isogram-input {
+  width: 300px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px;
+}
+
+.invalid {
+  border-color: red;
+}
+
+.valid {
+  border-color: green;
+}
+
+.isogram-code {
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  margin-left: -350px;
+  top: 150px;
+}

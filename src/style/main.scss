@@ -1,0 +1,32 @@
+@import "normalize";
+@import "bourbon/bourbon";
+
+
+
+// defaults
+*,
+*::before,
+*::after {
+  @include box-sizing(border-box);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+html,
+body {
+  @include size(100% 100%);
+}
+
+@import "layout";
+@import "home";

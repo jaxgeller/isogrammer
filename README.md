@@ -1,5 +1,8 @@
-### turn your google analytics code from something like this
+# isogrammer
 
+> A word or phrase without a repeating letter.
+
+## Turn your GA code from this:
 
 ```html
 <script>
@@ -8,16 +11,12 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UIDHERE', 'auto');
+  ga('create', 'U-ID-HERE', 'auto');
   ga('send', 'pageview');
-
 </script>
 ```
 
-
-
-### to this
-
+## to this
 
 ```html
 <script>
@@ -26,11 +25,9 @@
   x= r.getElementsByTagName(a)[0];u.async=1;u.src=v ;x.parentNode.insertBefore(u,x)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UIDHERE', 'auto');
+  ga('create', 'U-ID-HERE', 'auto');
   ga('send', 'pageview');
-
 </script>
 ```
 
-
-# It's a nice touch.
+# Nice touch, eh?

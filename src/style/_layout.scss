@@ -1,5 +1,7 @@
 .wrapper {
-  width: 100%;
+  @include clearfix;
+  @include size(100% 100%);
+  width: 960px;
   margin: 0 auto;
-  text-align: center;
+  padding: 100px 0;
 }

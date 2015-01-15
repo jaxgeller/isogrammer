@@ -1,27 +1,69 @@
-.header {
-
+.title {
+  @include clearfix;
 }
+
+.title-text {
+  float: left;
+  margin-left: 15px;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+.logo {
+  @include hide-text;
+  @include size(175px 34px);
+  float: left;
+  background: url("images/logo.svg") center center no-repeat;
+  margin: 0;
+}
+
+
+.input {
+  width: 450px;
+  float: left;
+}
+
 .isogram-input {
-  width: 300px;
+  width: 100%;
   border: none;
   outline: none;
-  border-bottom: 2px solid #ccc;
-  padding: 5px;
+  border-bottom: 1px solid white;
+  background-color: $red;
+  color: white;
+  padding: 25px 5px;
+  font-size: 60px;
+
+  @include placeholder {
+    color: white;
+  }
 }
 
-.invalid {
-  border-color: red;
+
+.output {
+  width: 500px;
+  float: right;
 }
 
-.valid {
-  border-color: green;
+.google-logo {
+  background-color: #8FA3AD;
+  padding: 20px;
+  @include hide-text;
+  @include size(107px 20px);
+  background: url("images/google-analytics-logo.png") center center no-repeat;
 }
 
-.isogram-code {
+.author {
+  clear: both !important;
+  opacity: 1;
   display: block;
-  position: absolute;
-  left: 50%;
-  width: 100%;
-  margin-left: -350px;
-  top: 150px;
+  padding: 5px;
+  font-weight: 200;
+  font-size: 12px;
+  @include transition(opacity 0.35s ease);
+
+  &:hover {
+    opacity: 0.75;
+  }
 }

@@ -22,6 +22,7 @@
   @include appearance(none);
   @include size(400px auto);
   padding: 0 0 15px 10px;
+  margin-bottom: 150px;
   background-color: $red;
   border: none;
   border-bottom: 2px solid white;
@@ -32,5 +33,42 @@
   // match the placeholder to the typed text
   @include placeholder {
     color: white;
+  }
+}
+
+.credits {
+  font-size: 12px;
+
+  a {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px;
+
+    &:hover {
+      @include animation(tada 1s);
+    }
+  }
+}
+
+// adapted from: https://github.com/daneden/animate.css/blob/master/source/attention_seekers/tada.css
+@include keyframes(tada) {
+  0% {
+    @include transform(scale3d(1, 1, 1));
+  }
+
+  10%, 20% {
+    @include transform(scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg));
+  }
+
+  30%, 50%, 70%, 90% {
+    @include transform(scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg));
+  }
+
+  40%, 60%, 80% {
+    @include transform(scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg));
+  }
+
+  100% {
+    @include transform(scale3d(1, 1, 1));
   }
 }

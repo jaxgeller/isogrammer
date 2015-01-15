@@ -13,6 +13,17 @@ body {
   @include clearfix;
   float: left;
   @include size(50% 100%);
+
+  @include mq(1100px) {
+    float: none;
+    @include size(100% auto);
+  }
+}
+
+.inputs {
+  @include mq(1100px) {
+    padding: 100px 0 50px 0;
+  }
 }
 
 .input-container {
@@ -24,11 +35,21 @@ body {
   @include size(400px auto);
   margin-left: -200px;
 
+  @include mq(1100px) {
+    @include transform(none);
+    position: static;
+    margin: 0 auto;
+  }
+
   &::after {
     content: "";
     @include position(absolute, 50% -55px null null);
     display: block;
     @include size(13px 26px);
     background: url("images/arrow-right.svg") center center no-repeat;
+
+    @include mq(1100px) {
+      content: normal;
+    }
   }
 }

@@ -30,6 +30,10 @@
   font-size: 54px;
   color: white;
 
+  @include mq(1100px) {
+    margin: 0 0 10px 0;
+  }
+
   // match the placeholder to the typed text
   @include placeholder {
     color: white;
@@ -38,6 +42,10 @@
 
 .credits {
   font-size: 10px;
+
+  @include mq(1100px) {
+    margin: 0 0 0 14px;
+  }
 
   a {
     display: inline-block;
@@ -81,6 +89,11 @@
   margin: 0 auto;
   padding: 70px 25px 0 25px;
   background-color: #F7F6F4;
+
+  @include mq(1100px) {
+    @include transform(none);
+    top: auto;
+  }
 }
 
 .code-intro {

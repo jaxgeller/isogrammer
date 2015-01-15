@@ -72,3 +72,26 @@
     @include transform(scale3d(1, 1, 1));
   }
 }
+
+.code {
+  @include transform(translateY(-50%));
+  position: relative;
+  top: 50%;
+  @include size(515px 265px);
+  margin: 0 auto;
+  padding: 70px 25px 0 25px;
+  background-color: #F7F6F4;
+}
+
+.code-intro {
+  @include position(absolute, 0 null null 0);
+  @include size(100% 50px);
+  margin: 0;
+  background: url('images/logo-ga.svg') #8FA3AD 25px 16px no-repeat;
+}
+
+.code-block {
+  margin: 0;
+  font-family: 'Ubunutu Mono', monospace;
+  color: #536D79;
+}

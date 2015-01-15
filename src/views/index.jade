@@ -5,6 +5,7 @@ html
     meta(charset="UTF-8")
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     link(href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400")
+    link(href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
     link(rel='stylesheet', href='main.css')
 
   body
@@ -20,8 +21,11 @@ html
           a(href="https://github.com/jaxgeller") @jaxgeller
 
       .output
-        code.google-analytics
-
+        .code
+          p.code-intro
+          pre.code-block
+            | Google Analytics code would go here.
+            | In monospace, because we&apos;re pros.
 
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
     //- script(src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js")

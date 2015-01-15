@@ -7,3 +7,10 @@ body {
   @include clearfix;
   @include size(100%);
 }
+
+.inputs,
+.output {
+  @include clearfix;
+  float: left;
+  @include size(50% 100%);
+}

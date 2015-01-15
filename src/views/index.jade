@@ -11,14 +11,15 @@ html
   body
     .wrapper
       .inputs
-        hgroup.headings
-          h1.logo isogrammer
-          h2.tagline Isogram analytics generator
+        .input-container
+          hgroup.headings
+            h1.logo isogrammer
+            h2.tagline Isogram analytics generator
 
-        input.input(type="text", placeholder="isogram", maxlength="7")
+          input.input(type="text", placeholder="isogram", maxlength="7")
 
-        p.credits by 
-          a(href="https://github.com/jaxgeller") @jaxgeller
+          p.credits by 
+            a(href="https://github.com/jaxgeller") @jaxgeller
 
       .output
         .code

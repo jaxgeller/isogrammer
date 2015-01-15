@@ -22,7 +22,7 @@
   @include appearance(none);
   @include size(400px auto);
   padding: 0 0 15px 10px;
-  margin-bottom: 150px;
+  margin-bottom: 180px;
   background-color: $red;
   border: none;
   border-bottom: 2px solid white;
@@ -37,12 +37,12 @@
 }
 
 .credits {
-  font-size: 12px;
+  font-size: 10px;
 
   a {
     display: inline-block;
     margin-left: 5px;
-    font-size: 16px;
+    font-size: 18px;
 
     &:hover {
       @include animation(tada 1s);
@@ -50,7 +50,7 @@
   }
 }
 
-// adapted from: https://github.com/daneden/animate.css/blob/master/source/attention_seekers/tada.css
+// jacked from: https://github.com/daneden/animate.css/blob/master/source/attention_seekers/tada.css
 @include keyframes(tada) {
   0% {
     @include transform(scale3d(1, 1, 1));
@@ -93,5 +93,6 @@
 .code-block {
   margin: 0;
   font-family: 'Ubunutu Mono', monospace;
+  font-size: 12px;
   color: #536D79;
 }

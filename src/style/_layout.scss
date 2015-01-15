@@ -14,3 +14,21 @@ body {
   float: left;
   @include size(50% 100%);
 }
+
+.input-container {
+  @include transform(translateY(-50%));
+  position: relative;
+  top: 50%;
+  left: 50%;
+  @include clearfix;
+  @include size(400px auto);
+  margin-left: -200px;
+
+  &::after {
+    content: "";
+    @include position(absolute, 50% -55px null null);
+    display: block;
+    @include size(13px 26px);
+    background: url("images/arrow-right.svg") center center no-repeat;
+  }
+}

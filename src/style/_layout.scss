@@ -1,7 +1,9 @@
+html,
+body {
+  height: 100%;
+}
+
 .wrapper {
   @include clearfix;
-  @include size(100% 100%);
-  width: 960px;
-  margin: 0 auto;
-  padding: 100px 0;
+  @include size(100%);
 }

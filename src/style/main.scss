@@ -1,19 +1,23 @@
-@import "normalize";
-@import "bourbon/bourbon";
+// color vars
 
 $red: #FF2750;
 
-// defaults
+// reset and mixin library
+
+@import "normalize";
+@import "bourbon/bourbon";
+
+// global styles
+
 *,
 *::before,
 *::after {
   @include box-sizing(border-box);
-  margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 strong {
@@ -24,17 +28,15 @@ em {
   font-style: italic;
 }
 
-html,
-body {
-  @include size(100% 100%);
-}
-
 body {
   background-color: $red;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
+  line-height: 1.25;
   color: white;
 }
+
+// partials
 
 @import "layout";
 @import "home";

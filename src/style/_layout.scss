@@ -1,7 +1,34 @@
+html,
+body {
+  height: 100%;
+}
+
 .wrapper {
   @include clearfix;
-  @include size(100% 100%);
-  width: 960px;
-  margin: 0 auto;
-  padding: 100px 0;
+  @include size(100%);
+}
+
+.inputs,
+.output {
+  @include clearfix;
+  float: left;
+  @include size(50% 100%);
+}
+
+.input-container {
+  @include transform(translateY(-50%));
+  position: relative;
+  top: 50%;
+  left: 50%;
+  @include clearfix;
+  @include size(400px auto);
+  margin-left: -200px;
+
+  &::after {
+    content: "";
+    @include position(absolute, 50% -55px null null);
+    display: block;
+    @include size(13px 26px);
+    background: url("images/arrow-right.svg") center center no-repeat;
+  }
 }

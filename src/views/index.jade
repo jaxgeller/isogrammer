@@ -9,22 +9,23 @@ html
 
   body
     .wrapper
-      .title
-        h1.logo isogrammer
-        p.title-text Isogram analytics generator
+
+      //- left
       .input
+        .headings
+          h1.isogrammer isogrammer
+          h3.tagline Isogram analytics generator
         input.isogram-input(placeholder="isogram")
 
-      .output
-        h1.google-logo Google analytics
+        p.credits by&nbsp;
+          a(href="https://twitter.com/jaxgeller") @jaxgeller
+
+      //- right
+      .script-output
+        .output-top
+        pre.output-bottom
 
 
-      a.author(href="http://jaxgeller.com") by @jaxgeller
-    //-   h1.header Input here
-    //-   input.isogram-input(placeholder="isogram")
-
-    //- code.isogram-code
-
-    //- script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js")
-    //- script(src="main.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js")
+    script(src="main.js")

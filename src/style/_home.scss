@@ -1,69 +1,72 @@
-.title {
-  @include clearfix;
-}
-
-.title-text {
-  float: left;
-  margin-left: 15px;
-  font-weight: 200;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-
-.logo {
-  @include hide-text;
-  @include size(175px 34px);
-  float: left;
-  background: url("images/logo.svg") center center no-repeat;
-  margin: 0;
-}
-
-
 .input {
-  width: 450px;
   float: left;
+  width: 480px;
+  background: url("images/arrow-right.svg") right 198px no-repeat;
+}
+
+.headings {
+  @include clearfix;
+  margin-bottom: 80px;
+}
+
+.isogrammer {
+  @include hide-text;
+  @include size(174px 34px);
+  background: url("images/logo.svg") center center no-repeat;
+  float: left;
+  margin: 0 25px 0 0;
+}
+
+.tagline {
+  font-weight: 100;
+  float: left;
+  line-height: 1.9;
 }
 
 .isogram-input {
-  width: 100%;
+  background-color: $red;
   border: none;
   outline: none;
-  border-bottom: 1px solid white;
-  background-color: $red;
+  border-bottom: 2px solid white;
   color: white;
-  padding: 25px 5px;
-  font-size: 60px;
-
+  padding: 15px 5px;
+  font-size: 50px;
+  margin-bottom: 200px;
   @include placeholder {
     color: white;
   }
 }
 
+.credits {
+  font-size: 14px;
+}
 
-.output {
-  width: 500px;
+.script-output {
   float: right;
+  margin-top: 100px;
+  @include size(550px 200px);
 }
 
-.google-logo {
+.output-top {
+  border-radius: 3px 3px 0 0;
   background-color: #8FA3AD;
-  padding: 20px;
-  @include hide-text;
-  @include size(107px 20px);
-  background: url("images/google-analytics-logo.png") center center no-repeat;
+  height: 50px;
+  background: url("images/logo-ga.svg") #8FA3AD 20px center no-repeat;
 }
 
-.author {
-  clear: both !important;
-  opacity: 1;
-  display: block;
-  padding: 5px;
-  font-weight: 200;
+
+.output-bottom {
+  border-radius: 0 0 3px 3px;
+  background-color: #F7F6F4;
+  height: 100%;
+  color: #536D79;
+  font-family: 'Ubunutu Mono', monospace;
   font-size: 12px;
-  @include transition(opacity 0.35s ease);
-
-  &:hover {
-    opacity: 0.75;
-  }
+  padding: 25px;
 }
+
+
+
+
+
+

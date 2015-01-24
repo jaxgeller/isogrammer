@@ -8,7 +8,9 @@
   @include clearfix;
   margin-bottom: 80px;
 }
-
+.red {
+  color: red;
+}
 .isogrammer {
   @include hide-text;
   @include size(174px 34px);

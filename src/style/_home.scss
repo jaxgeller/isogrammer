@@ -1,7 +1,7 @@
 .input {
   float: left;
-  width: 480px;
-  background: url("images/arrow-right.svg") right 198px no-repeat;
+  width: 450px;
+  background: url("images/arrow-right.svg") right 197px no-repeat;
 }
 
 .headings {
@@ -32,6 +32,7 @@
   padding: 15px 5px;
   font-size: 50px;
   margin-bottom: 200px;
+  width: 410px;
   @include placeholder {
     color: white;
   }
@@ -44,7 +45,7 @@
 .script-output {
   float: right;
   margin-top: 100px;
-  @include size(550px 200px);
+  @include size(570px auto);
 }
 
 .output-top {
@@ -60,9 +61,11 @@
   background-color: #F7F6F4;
   height: 100%;
   color: #536D79;
-  font-family: 'Ubunutu Mono', monospace;
+  font-family: "Ubunutu Mono", monospace;
   font-size: 12px;
-  padding: 25px;
+  padding: 20px;
+  overflow: hidden;
+  letter-spacing: -0.8px;
 }
 
 

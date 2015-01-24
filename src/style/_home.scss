@@ -8,9 +8,7 @@
   @include clearfix;
   margin-bottom: 80px;
 }
-.red {
-  color: red;
-}
+
 .isogrammer {
   @include hide-text;
   @include size(174px 34px);
@@ -33,11 +31,16 @@
   color: white;
   padding: 15px 5px;
   font-size: 50px;
-  margin-bottom: 200px;
   width: 410px;
   @include placeholder {
     color: white;
   }
+}
+
+.warning {
+  margin: 20px auto 180px auto;
+  height: 20px;
+  @include animation(flash 4s ease-in-out infinite);
 }
 
 .credits {
@@ -70,8 +73,6 @@
   letter-spacing: -0.8px;
 }
 
-
-
-
-
-
+.active {
+  @include animation(fadeIn 0.75s ease-in-out);
+}

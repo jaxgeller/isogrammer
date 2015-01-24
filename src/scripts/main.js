@@ -1,7 +1,7 @@
 'use strict';
 
 function getTemplate(isogram) {
-  var template = _.template("&lt;script&gt;<br/>&nbsp;&nbsp;(function(<%=isogram[0]%>,<%=isogram[1]%>,<%=isogram[2]%>,<%=isogram[3]%>,<%=isogram[4]%>,<%=isogram[5]%>,<%=isogram[6]%>){<%=isogram[0]%>[&#039;GoogleAnalyticsObject&#039;]=<%=isogram[4]%>;<%=isogram[0]%>[<%=isogram[4]%>]=<%=isogram[0]%>[<%=isogram[4]%>]||function(){<br/>&nbsp;&nbsp;(<%=isogram[0]%>[<%=isogram[4]%>].q=<%=isogram[0]%>[<%=isogram[4]%>].q||[]).push(arguments)},<%=isogram[0]%>[r].l=1*new Date();<%=isogram[5]%>=<%=isogram[1]%>.createElement(<%=isogram[2]%>),<br/>&nbsp;&nbsp;<%=isogram[6]%>=<%=isogram[1]%>.getElementsByTagName(<%=isogram[2]%>)[0];<%=isogram[5]%>.async=1;<%=isogram[5]%>.src=<%=isogram[3]%>;<%=isogram[6]%>.parentNode.insertBefore(<%=isogram[5]%>,<%=isogram[6]%>)<br/>&nbsp;&nbsp;})(window,document,&#039;script&#039;,&#039;//www.google-analytics.com/analytics.js&#039;,&#039;ga&#039;);<br/><br/>&nbsp;&nbsp;ga(&#039;create&#039;, &#039;UIDHERE&#039;, &#039;auto&#039;);<br/>&nbsp;&nbsp;ga(&#039;send&#039;, &#039;pageview&#039;);<br/>&lt;/script&gt;");
+  var template = _.template('&lt;script&gt;<br/>&nbsp;&nbsp;(function(<span class="char-0"><%=isogram[0]%></span>,<span class="char-1"><%=isogram[1]%></span>,<span class="char-2"><%=isogram[2]%></span>,<span class="char-3"><%=isogram[3]%></span>,<span class="char-4"><%=isogram[4]%></span>,<span class="char-5"><%=isogram[5]%></span>,<span class="char-6"><%=isogram[6]%></span>){<span class="char-0"><%=isogram[0]%></span>[&#039;GoogleAnalyticsObject&#039;]=<span class="char-4"><%=isogram[4]%></span>;<span class="char-0"><%=isogram[0]%></span>[<span class="char-4"><%=isogram[4]%></span>]=<span class="char-0"><%=isogram[0]%></span>[<span class="char-4"><%=isogram[4]%></span>]||function(){<br/>&nbsp;&nbsp;(<span class="char-0"><%=isogram[0]%></span>[<span class="char-4"><%=isogram[4]%></span>].q=<span class="char-0"><%=isogram[0]%></span>[<span class="char-4"><%=isogram[4]%></span>].q||[]).push(arguments)},<span class="char-0"><%=isogram[0]%></span>[r].l=1*new Date();<span class="char-5"><%=isogram[5]%></span>=<span class="char-1"><%=isogram[1]%></span>.createElement(<span class="char-2"><%=isogram[2]%></span>),<br/>&nbsp;&nbsp;<span class="char-6"><%=isogram[6]%></span>=<span class="char-1"><%=isogram[1]%></span>.getElementsByTagName(<span class="char-2"><%=isogram[2]%></span>)[0];<span class="char-5"><%=isogram[5]%></span>.async=1;<span class="char-5"><%=isogram[5]%></span>.src=<span class="char-3"><%=isogram[3]%></span>;<span class="char-6"><%=isogram[6]%></span>.parentNode.insertBefore(<span class="char-5"><%=isogram[5]%></span>,<span class="char-6"><%=isogram[6]%></span>)<br/>&nbsp;&nbsp;})(window,document,&#039;script&#039;,&#039;//www.google-analytics.com/analytics.js&#039;,&#039;ga&#039;);<br/><br/>&nbsp;&nbsp;ga(&#039;create&#039;, &#039;UIDHERE&#039;, &#039;auto&#039;);<br/>&nbsp;&nbsp;ga(&#039;send&#039;, &#039;pageview&#039;);<br/>&lt;/script&gt;');
 
   return template({isogram: isogram});
 }
@@ -28,39 +28,31 @@ function isIsogram(word){
   return is;
 }
 
-function isValid(input) {
-  if (input.val().length === 7 && isIsogram(input.val())) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
-
-
 $(document).on('ready', function() {
   var initChars = ['i','s','o','g','r','a','m'];
   var $input = $('.isogram-input');
   var $output = $('.output-bottom');
+  var $warning = $('.warning');
   $output.html(getTemplate(initChars));
 
-  $input.on('input', function() {
+  $input.on('input', function(e) {
     var currChars = $input.val().split('');
-    var currLength = currChars.length;
+    var currIndex = currChars.length -1;
 
-    if (currLength < 7) {
-      currChars = currChars.concat(initChars.slice(currLength));
+    if ($input.val().length > 7) {
+      $warning.text('Cannot be longer than 7 characters.');
+      $input.prop('disabled', true);
+    }
+    else if (!isIsogram($input.val())) {
+      $input.attr('maxlength', currIndex + 1);
+      $warning.text('Cannot have repeat characters, not an isogram.');
+    }
+    else {
+      $input.attr('maxlength', 7);
+      $warning.text('')
+      $output.html(getTemplate(currChars));
+      $('.output-bottom span.char-'+currIndex).addClass('active');
     }
 
-    $output.html(getTemplate(currChars));
   });
-
 });
-
-
-
-
-
-
-
-

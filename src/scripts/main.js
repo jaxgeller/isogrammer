@@ -49,10 +49,9 @@ $(document).on('ready', function() {
     }
     else {
       $input.attr('maxlength', 7);
-      $warning.text('')
+      $warning.text('');
       $output.html(getTemplate(currChars));
       $('.output-bottom span.char-'+currIndex).addClass('active');
     }
-
   });
 });

@@ -2,11 +2,23 @@
   float: left;
   width: 450px;
   background: url("images/arrow-right.svg") right 197px no-repeat;
+
+  @include mobile {
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+    background: none;
+  }
 }
 
 .headings {
   @include clearfix;
   margin-bottom: 80px;
+
+  @include mobile() {
+    text-align: center;
+    margin-bottom: 0;
+  }
 }
 
 .isogrammer {
@@ -15,12 +27,28 @@
   background: url("images/logo.svg") center center no-repeat;
   float: left;
   margin: 0 25px 0 0;
+
+  @include mobile {
+    float: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -87px;
+  }
 }
 
 .tagline {
   font-weight: 100;
   float: left;
   line-height: 1.9;
+
+  @include mobile {
+    float: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    margin-top: 40px;
+  }
 }
 
 .isogram-input {
@@ -35,22 +63,57 @@
   @include placeholder {
     color: white;
   }
+
+  @include mobile {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    text-align: center;
+    margin-top: 100px;
+  }
 }
 
 .warning {
   margin: 20px auto 180px auto;
   height: 20px;
   @include animation(flash 4s ease-in-out infinite);
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .credits {
   font-size: 14px;
+
+  @include mobile {
+    display: none;
+  }
 }
+
+.credits-mobile {
+  display: none;
+
+  @include mobile {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
 
 .script-output {
   float: right;
   margin-top: 100px;
+  max-width: 570px;
   @include size(570px auto);
+
+  @include mobile {
+    float: none;
+    margin: 225px auto 0 auto;
+    width: 80%;
+  }
 }
 
 .output-top {
@@ -59,7 +122,6 @@
   height: 50px;
   background: url("images/logo-ga.svg") #8FA3AD 20px center no-repeat;
 }
-
 
 .output-bottom {
   border-radius: 0 0 3px 3px;
@@ -71,6 +133,13 @@
   padding: 20px;
   overflow: hidden;
   letter-spacing: -0.8px;
+
+  @include mobile {
+    overflow-x: scroll;
+    padding: 10px;
+    font-size: 10px;
+    letter-spacing: -1.25px;
+  }
 }
 
 .active {

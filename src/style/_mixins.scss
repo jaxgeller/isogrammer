@@ -1,0 +1,5 @@
+@mixin mobile($size: $mobile) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}

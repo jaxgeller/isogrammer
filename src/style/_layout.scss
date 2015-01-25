@@ -2,4 +2,9 @@
   @include clearfix;
   @include size(1050px auto);
   margin: 100px auto 0 auto;
+
+  @include mobile {
+    width: 100%;
+    margin-top: 50px;
+  }
 }

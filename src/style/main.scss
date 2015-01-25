@@ -1,8 +1,12 @@
+$red: #FF2750;
+$mobile: 1080px;
+
 @import "normalize";
 @import "bourbon/bourbon";
+@import "mixins";
 @import "animations";
 
-$red: #FF2750;
+
 
 // defaults
 *,

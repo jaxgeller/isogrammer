@@ -28,3 +28,12 @@
     color: black;
   }
 }
+
+@include keyframes(fade) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

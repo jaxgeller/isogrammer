@@ -39,19 +39,24 @@ $(document).on('ready', function() {
     var currChars = $input.val().split('');
     var currIndex = currChars.length -1;
 
+    if ($input.val().length < 7 || !isIsogram($input.val()) ) $('.copy').removeClass('can-copy');
+
     if ($input.val().length > 7) {
       $warning.text('Cannot be longer than 7 characters.');
-      $input.prop('disabled', true);
     }
+
     else if (!isIsogram($input.val())) {
-      $input.attr('maxlength', currIndex + 1);
+      $input.val($input.val().substring(0, $input.val().length-1))
       $warning.text('Cannot have repeat characters, not an isogram.');
     }
+
     else {
-      $input.attr('maxlength', 7);
       $warning.text('');
       $output.html(getTemplate(currChars));
       $('.output-bottom span.char-'+currIndex).addClass('active');
+      if ($input.val().length === 7) $('.copy').addClass('can-copy');
     }
+
   });
+
 });

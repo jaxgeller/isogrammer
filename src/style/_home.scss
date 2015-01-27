@@ -145,3 +145,19 @@
 .active {
   @include animation(fadeIn 0.75s ease-in-out);
 }
+
+.copy {
+  display: none;
+  opacity: 0;
+  margin-top: 10px;
+  border: 2px solid white;
+  border-radius: 3px;
+  padding: 7px 15px;
+  @include transition(all 1s ease);
+}
+
+.can-copy {
+  display: inline-block;
+  opacity: 1;
+  @include transition(all 1s ease);
+}

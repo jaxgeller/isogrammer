@@ -38,12 +38,13 @@ $(document).on('ready', function() {
     var currChars = $input.val().split('');
     var currIndex = currChars.length -1;
 
-    if ($input.val().length > 7) {
-      $warning.text('Cannot be longer than 7 characters.');
+    if ( !/^[a-z]+$/.test($input.val()) ) {
+      $input.val($input.val().substring(0, $input.val().length-1));
+      $warning.text('Can only have alpha characters.');
     }
 
     else if (!isIsogram($input.val())) {
-      $input.val($input.val().substring(0, $input.val().length-1))
+      $input.val($input.val().substring(0, $input.val().length-1));
       $warning.text('Cannot have repeat characters, not an isogram.');
     }
 
@@ -52,14 +53,11 @@ $(document).on('ready', function() {
       $output.html(getTemplate(currChars));
       $('.output-bottom span.char-'+currIndex).addClass('active');
       if (isIsogram($input.val()) && $input.val().length === 7) {
-
         $('.output-bottom span.char-'+currIndex).removeClass('active');
         $('.char-highlight').each(function(i, item) {
           setTimeout(function(){$(item).addClass('is-valid');}, 20 * i);
         });
-
       }
     }
-
   });
 });

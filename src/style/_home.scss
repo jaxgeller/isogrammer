@@ -80,7 +80,11 @@
   @include animation(flash 4s ease-in-out infinite);
 
   @include mobile {
-    display: none;
+    position: absolute;
+    top: 120px;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
   }
 }
 
